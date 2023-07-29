@@ -1,0 +1,22 @@
+{
+  "logo": "logo.png",
+  "main": "index.html",
+  "development": {
+    "main": "http://localhost:5173/"
+  },
+  "features": [
+    {
+      "code": "ASCII_ART",
+      "explain": "生成字符画",
+      "cmds": [
+        "字符画",
+        "ASCII Art",
+        {
+          "type": "regex",
+          "label": "生成字符画",
+          "match": "/\\S{2,10}/gi"
+        }
+      ]
+    }
+  ]
+}
