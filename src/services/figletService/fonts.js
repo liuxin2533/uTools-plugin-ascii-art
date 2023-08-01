@@ -5,6 +5,11 @@ import F_3D_ASCII from "figlet/importable-fonts/3D-ASCII"
 import F_3X5 from "figlet/importable-fonts/3x5"
 import F_4MAX from "figlet/importable-fonts/4Max"
 import F_5_LINE_OBLIQUE from "figlet/importable-fonts/5 Line Oblique"
+import F_ACROBATIC from "figlet/importable-fonts/Acrobatic"
+import F_ALLIGATOR from "figlet/importable-fonts/Alligator"
+import F_ALLIGATOR2 from "figlet/importable-fonts/Alligator2"
+import F_ALPHA from "figlet/importable-fonts/Alpha"
+import F_ALPHABET from "figlet/importable-fonts/Alphabet"
 import F_AMC_3_LINE from "figlet/importable-fonts/AMC 3 Line"
 import F_AMC_3_LIV1 from "figlet/importable-fonts/AMC 3 Liv1"
 import F_AMC_AAA01 from "figlet/importable-fonts/AMC AAA01"
@@ -18,13 +23,8 @@ import F_AMC_TUBES from "figlet/importable-fonts/AMC Tubes"
 import F_AMC_UNTITLED from "figlet/importable-fonts/AMC Untitled"
 import F_ANSI_REGULAR from "figlet/importable-fonts/ANSI Regular"
 import F_ANSI_SHADOW from "figlet/importable-fonts/ANSI Shadow"
-import F_ASCII_NEW_ROMAN from "figlet/importable-fonts/ASCII New Roman"
-import F_ACROBATIC from "figlet/importable-fonts/Acrobatic"
-import F_ALLIGATOR from "figlet/importable-fonts/Alligator"
-import F_ALLIGATOR2 from "figlet/importable-fonts/Alligator2"
-import F_ALPHA from "figlet/importable-fonts/Alpha"
-import F_ALPHABET from "figlet/importable-fonts/Alphabet"
 import F_ARROWS from "figlet/importable-fonts/Arrows"
+import F_ASCII_NEW_ROMAN from "figlet/importable-fonts/ASCII New Roman"
 import F_AVATAR from "figlet/importable-fonts/Avatar"
 import F_B1FF from "figlet/importable-fonts/B1FF"
 import F_BANNER from "figlet/importable-fonts/Banner"
@@ -78,8 +78,6 @@ import F_CYBERMEDIUM from "figlet/importable-fonts/Cybermedium"
 import F_CYBERSMALL from "figlet/importable-fonts/Cybersmall"
 import F_CYGNET from "figlet/importable-fonts/Cygnet"
 import F_DANC4 from "figlet/importable-fonts/DANC4"
-import F_DOS_REBEL from "figlet/importable-fonts/DOS Rebel"
-import F_DWHISTLED from "figlet/importable-fonts/DWhistled"
 import F_DANCING_FONT from "figlet/importable-fonts/Dancing Font"
 import F_DECIMAL from "figlet/importable-fonts/Decimal"
 import F_DEF_LEPPARD from "figlet/importable-fonts/Def Leppard"
@@ -89,10 +87,12 @@ import F_DIET_COLA from "figlet/importable-fonts/Diet Cola"
 import F_DIGITAL from "figlet/importable-fonts/Digital"
 import F_DOH from "figlet/importable-fonts/Doh"
 import F_DOOM from "figlet/importable-fonts/Doom"
+import F_DOS_REBEL from "figlet/importable-fonts/DOS Rebel"
 import F_DOT_MATRIX from "figlet/importable-fonts/Dot Matrix"
 import F_DOUBLE_SHORTS from "figlet/importable-fonts/Double Shorts"
 import F_DOUBLE from "figlet/importable-fonts/Double"
 import F_DR_PEPPER from "figlet/importable-fonts/Dr Pepper"
+import F_DWHISTLED from "figlet/importable-fonts/DWhistled"
 import F_EFTI_CHESS from "figlet/importable-fonts/Efti Chess"
 import F_EFTI_FONT from "figlet/importable-fonts/Efti Font"
 import F_EFTI_ITALIC from "figlet/importable-fonts/Efti Italic"
@@ -142,23 +142,23 @@ import F_ISOMETRIC3 from "figlet/importable-fonts/Isometric3"
 import F_ISOMETRIC4 from "figlet/importable-fonts/Isometric4"
 import F_ITALIC from "figlet/importable-fonts/Italic"
 import F_IVRIT from "figlet/importable-fonts/Ivrit"
+import F_JACKY from "figlet/importable-fonts/Jacky"
+import F_JAZMINE from "figlet/importable-fonts/Jazmine"
+import F_JERUSALEM from "figlet/importable-fonts/Jerusalem"
 import F_JS_BLOCK_LETTERS from "figlet/importable-fonts/JS Block Letters"
 import F_JS_BRACKET_LETTERS from "figlet/importable-fonts/JS Bracket Letters"
 import F_JS_CAPITAL_CURVES from "figlet/importable-fonts/JS Capital Curves"
 import F_JS_CURSIVE from "figlet/importable-fonts/JS Cursive"
 import F_JS_STICK_LETTERS from "figlet/importable-fonts/JS Stick Letters"
-import F_JACKY from "figlet/importable-fonts/Jacky"
-import F_JAZMINE from "figlet/importable-fonts/Jazmine"
-import F_JERUSALEM from "figlet/importable-fonts/Jerusalem"
 import F_KATAKANA from "figlet/importable-fonts/Katakana"
 import F_KBAN from "figlet/importable-fonts/Kban"
 import F_KEYBOARD from "figlet/importable-fonts/Keyboard"
 import F_KNOB from "figlet/importable-fonts/Knob"
 import F_KONTO_SLANT from "figlet/importable-fonts/Konto Slant"
 import F_KONTO from "figlet/importable-fonts/Konto"
-import F_LCD from "figlet/importable-fonts/LCD"
 import F_LARRY_3D_2 from "figlet/importable-fonts/Larry 3D 2"
 import F_LARRY_3D from "figlet/importable-fonts/Larry 3D"
+import F_LCD from "figlet/importable-fonts/LCD"
 import F_LEAN from "figlet/importable-fonts/Lean"
 import F_LETTERS from "figlet/importable-fonts/Letters"
 import F_LIL_DEVIL from "figlet/importable-fonts/Lil Devil"
@@ -180,19 +180,19 @@ import F_MORSE2 from "figlet/importable-fonts/Morse2"
 import F_MOSCOW from "figlet/importable-fonts/Moscow"
 import F_MSHEBREW210 from "figlet/importable-fonts/Mshebrew210"
 import F_MUZZLE from "figlet/importable-fonts/Muzzle"
-import F_NSCRIPT from "figlet/importable-fonts/NScript"
-import F_NT_GREEK from "figlet/importable-fonts/NT Greek"
-import F_NV_SCRIPT from "figlet/importable-fonts/NV Script"
 import F_NANCYJ_FANCY from "figlet/importable-fonts/Nancyj-Fancy"
 import F_NANCYJ_IMPROVED from "figlet/importable-fonts/Nancyj-Improved"
 import F_NANCYJ_UNDERLINED from "figlet/importable-fonts/Nancyj-Underlined"
 import F_NANCYJ from "figlet/importable-fonts/Nancyj"
 import F_NIPPLES from "figlet/importable-fonts/Nipples"
+import F_NSCRIPT from "figlet/importable-fonts/NScript"
+import F_NT_GREEK from "figlet/importable-fonts/NT Greek"
+import F_NV_SCRIPT from "figlet/importable-fonts/NV Script"
 import F_O8 from "figlet/importable-fonts/O8"
-import F_OS2 from "figlet/importable-fonts/OS2"
 import F_OCTAL from "figlet/importable-fonts/Octal"
 import F_OGRE from "figlet/importable-fonts/Ogre"
 import F_OLD_BANNER from "figlet/importable-fonts/Old Banner"
+import F_OS2 from "figlet/importable-fonts/OS2"
 import F_PAGGA from "figlet/importable-fonts/Pagga"
 import F_PATORJKS_CHEESE from "figlet/importable-fonts/Patorjk's Cheese"
 import F_PATORJK_HEX from "figlet/importable-fonts/Patorjk-HeX"
@@ -220,13 +220,13 @@ import F_ROZZO from "figlet/importable-fonts/Rozzo"
 import F_RUNIC from "figlet/importable-fonts/Runic"
 import F_RUNYC from "figlet/importable-fonts/Runyc"
 import F_S_BLOOD from "figlet/importable-fonts/S Blood"
-import F_SL_SCRIPT from "figlet/importable-fonts/SL Script"
 import F_SANTA_CLARA from "figlet/importable-fonts/Santa Clara"
 import F_SCRIPT from "figlet/importable-fonts/Script"
 import F_SERIFCAP from "figlet/importable-fonts/Serifcap"
 import F_SHADOW from "figlet/importable-fonts/Shadow"
 import F_SHIMROD from "figlet/importable-fonts/Shimrod"
 import F_SHORT from "figlet/importable-fonts/Short"
+import F_SL_SCRIPT from "figlet/importable-fonts/SL Script"
 import F_SLANT_RELIEF from "figlet/importable-fonts/Slant Relief"
 import F_SLANT from "figlet/importable-fonts/Slant"
 import F_SLIDE from "figlet/importable-fonts/Slide"
@@ -258,7 +258,6 @@ import F_SUB_ZERO from "figlet/importable-fonts/Sub-Zero"
 import F_SWAMP_LAND from "figlet/importable-fonts/Swamp Land"
 import F_SWAN from "figlet/importable-fonts/Swan"
 import F_SWEET from "figlet/importable-fonts/Sweet"
-import F_THIS from "figlet/importable-fonts/THIS"
 import F_TANJA from "figlet/importable-fonts/Tanja"
 import F_TENGWAR from "figlet/importable-fonts/Tengwar"
 import F_TERM from "figlet/importable-fonts/Term"
@@ -266,6 +265,7 @@ import F_TEST1 from "figlet/importable-fonts/Test1"
 import F_THE_EDGE from "figlet/importable-fonts/The Edge"
 import F_THICK from "figlet/importable-fonts/Thick"
 import F_THIN from "figlet/importable-fonts/Thin"
+import F_THIS from "figlet/importable-fonts/THIS"
 import F_THORNED from "figlet/importable-fonts/Thorned"
 import F_THREE_POINT from "figlet/importable-fonts/Three Point"
 import F_TICKS_SLANT from "figlet/importable-fonts/Ticks Slant"
@@ -279,8 +279,8 @@ import F_TSALAGI from "figlet/importable-fonts/Tsalagi"
 import F_TUBULAR from "figlet/importable-fonts/Tubular"
 import F_TWISTED from "figlet/importable-fonts/Twisted"
 import F_TWO_POINT from "figlet/importable-fonts/Two Point"
-import F_USA_FLAG from "figlet/importable-fonts/USA Flag"
 import F_UNIVERS from "figlet/importable-fonts/Univers"
+import F_USA_FLAG from "figlet/importable-fonts/USA Flag"
 import F_VARSITY from "figlet/importable-fonts/Varsity"
 import F_WAVY from "figlet/importable-fonts/Wavy"
 import F_WEIRD from "figlet/importable-fonts/Weird"
@@ -295,6 +295,11 @@ export default {
 "3x5": F_3X5,
 "4Max": F_4MAX,
 "5 Line Oblique": F_5_LINE_OBLIQUE,
+"Acrobatic": F_ACROBATIC,
+"Alligator": F_ALLIGATOR,
+"Alligator2": F_ALLIGATOR2,
+"Alpha": F_ALPHA,
+"Alphabet": F_ALPHABET,
 "AMC 3 Line": F_AMC_3_LINE,
 "AMC 3 Liv1": F_AMC_3_LIV1,
 "AMC AAA01": F_AMC_AAA01,
@@ -308,13 +313,8 @@ export default {
 "AMC Untitled": F_AMC_UNTITLED,
 "ANSI Regular": F_ANSI_REGULAR,
 "ANSI Shadow": F_ANSI_SHADOW,
-"ASCII New Roman": F_ASCII_NEW_ROMAN,
-"Acrobatic": F_ACROBATIC,
-"Alligator": F_ALLIGATOR,
-"Alligator2": F_ALLIGATOR2,
-"Alpha": F_ALPHA,
-"Alphabet": F_ALPHABET,
 "Arrows": F_ARROWS,
+"ASCII New Roman": F_ASCII_NEW_ROMAN,
 "Avatar": F_AVATAR,
 "B1FF": F_B1FF,
 "Banner": F_BANNER,
@@ -368,8 +368,6 @@ export default {
 "Cybersmall": F_CYBERSMALL,
 "Cygnet": F_CYGNET,
 "DANC4": F_DANC4,
-"DOS Rebel": F_DOS_REBEL,
-"DWhistled": F_DWHISTLED,
 "Dancing Font": F_DANCING_FONT,
 "Decimal": F_DECIMAL,
 "Def Leppard": F_DEF_LEPPARD,
@@ -379,10 +377,12 @@ export default {
 "Digital": F_DIGITAL,
 "Doh": F_DOH,
 "Doom": F_DOOM,
+"DOS Rebel": F_DOS_REBEL,
 "Dot Matrix": F_DOT_MATRIX,
 "Double Shorts": F_DOUBLE_SHORTS,
 "Double": F_DOUBLE,
 "Dr Pepper": F_DR_PEPPER,
+"DWhistled": F_DWHISTLED,
 "Efti Chess": F_EFTI_CHESS,
 "Efti Font": F_EFTI_FONT,
 "Efti Italic": F_EFTI_ITALIC,
@@ -432,23 +432,23 @@ export default {
 "Isometric4": F_ISOMETRIC4,
 "Italic": F_ITALIC,
 "Ivrit": F_IVRIT,
+"Jacky": F_JACKY,
+"Jazmine": F_JAZMINE,
+"Jerusalem": F_JERUSALEM,
 "JS Block Letters": F_JS_BLOCK_LETTERS,
 "JS Bracket Letters": F_JS_BRACKET_LETTERS,
 "JS Capital Curves": F_JS_CAPITAL_CURVES,
 "JS Cursive": F_JS_CURSIVE,
 "JS Stick Letters": F_JS_STICK_LETTERS,
-"Jacky": F_JACKY,
-"Jazmine": F_JAZMINE,
-"Jerusalem": F_JERUSALEM,
 "Katakana": F_KATAKANA,
 "Kban": F_KBAN,
 "Keyboard": F_KEYBOARD,
 "Knob": F_KNOB,
 "Konto Slant": F_KONTO_SLANT,
 "Konto": F_KONTO,
-"LCD": F_LCD,
 "Larry 3D 2": F_LARRY_3D_2,
 "Larry 3D": F_LARRY_3D,
+"LCD": F_LCD,
 "Lean": F_LEAN,
 "Letters": F_LETTERS,
 "Lil Devil": F_LIL_DEVIL,
@@ -470,19 +470,19 @@ export default {
 "Moscow": F_MOSCOW,
 "Mshebrew210": F_MSHEBREW210,
 "Muzzle": F_MUZZLE,
-"NScript": F_NSCRIPT,
-"NT Greek": F_NT_GREEK,
-"NV Script": F_NV_SCRIPT,
 "Nancyj-Fancy": F_NANCYJ_FANCY,
 "Nancyj-Improved": F_NANCYJ_IMPROVED,
 "Nancyj-Underlined": F_NANCYJ_UNDERLINED,
 "Nancyj": F_NANCYJ,
 "Nipples": F_NIPPLES,
+"NScript": F_NSCRIPT,
+"NT Greek": F_NT_GREEK,
+"NV Script": F_NV_SCRIPT,
 "O8": F_O8,
-"OS2": F_OS2,
 "Octal": F_OCTAL,
 "Ogre": F_OGRE,
 "Old Banner": F_OLD_BANNER,
+"OS2": F_OS2,
 "Pagga": F_PAGGA,
 "Patorjk's Cheese": F_PATORJKS_CHEESE,
 "Patorjk-HeX": F_PATORJK_HEX,
@@ -510,13 +510,13 @@ export default {
 "Runic": F_RUNIC,
 "Runyc": F_RUNYC,
 "S Blood": F_S_BLOOD,
-"SL Script": F_SL_SCRIPT,
 "Santa Clara": F_SANTA_CLARA,
 "Script": F_SCRIPT,
 "Serifcap": F_SERIFCAP,
 "Shadow": F_SHADOW,
 "Shimrod": F_SHIMROD,
 "Short": F_SHORT,
+"SL Script": F_SL_SCRIPT,
 "Slant Relief": F_SLANT_RELIEF,
 "Slant": F_SLANT,
 "Slide": F_SLIDE,
@@ -548,7 +548,6 @@ export default {
 "Swamp Land": F_SWAMP_LAND,
 "Swan": F_SWAN,
 "Sweet": F_SWEET,
-"THIS": F_THIS,
 "Tanja": F_TANJA,
 "Tengwar": F_TENGWAR,
 "Term": F_TERM,
@@ -556,6 +555,7 @@ export default {
 "The Edge": F_THE_EDGE,
 "Thick": F_THICK,
 "Thin": F_THIN,
+"THIS": F_THIS,
 "Thorned": F_THORNED,
 "Three Point": F_THREE_POINT,
 "Ticks Slant": F_TICKS_SLANT,
@@ -569,8 +569,8 @@ export default {
 "Tubular": F_TUBULAR,
 "Twisted": F_TWISTED,
 "Two Point": F_TWO_POINT,
-"USA Flag": F_USA_FLAG,
 "Univers": F_UNIVERS,
+"USA Flag": F_USA_FLAG,
 "Varsity": F_VARSITY,
 "Wavy": F_WAVY,
 "Weird": F_WEIRD,
