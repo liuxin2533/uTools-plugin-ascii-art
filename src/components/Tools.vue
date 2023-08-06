@@ -1,13 +1,19 @@
 <template>
   <div class="tools-wrapper">
     <a-space>
-      <a-tooltip v-for="scheme in colorScheme" :content="scheme.title" mini>
+      <a-tooltip v-for="scheme in colorSchemes" :content="scheme.title" mini>
         <div :style="scheme.style" class="color-scheme" @click="colorSchemeChange(scheme)">
           Hi
         </div>
       </a-tooltip>
     </a-space>
     <a-space>
+      <a-tooltip :content="isFavorite(curFont)?'取消收藏该字体':'收藏该字体'" position="tr" mini>
+        <a-button shape="circle" size="small" type="outline" @click="toggleFavorite">
+          <icon-star-fill v-show="isFavorite(curFont)"></icon-star-fill>
+          <icon-star v-show="!isFavorite(curFont)"></icon-star>
+        </a-button>
+      </a-tooltip>
       <a-tooltip content="上一个字体" position="tr" mini>
         <a-button shape="circle" size="small" type="outline" @click="fontChange(-1)">
           <icon-left></icon-left>
@@ -28,19 +34,22 @@
 </template>
 <script setup>
 
+import { useColorSchemeStore } from '@/store/colorScheme.js'
+import { useFontsStore } from '@/store/fonts.js'
+
 const $emit = defineEmits(['colorSchemeChange', 'fontChange', 'copy'])
+const $props = defineProps({
+  curFont: String
+})
+const colorSchemeStore = useColorSchemeStore()
+const fontsStore = useFontsStore()
 
+const { colorSchemes } = storeToRefs(colorSchemeStore)
+const { isFavorite } = storeToRefs(fontsStore)
 
-const colorScheme = ref([
-  {title: 'default', style: {color: '#000000', backgroundColor: '#EDF2F9'}},
-  {title: 'white', style: {color: '#000000', backgroundColor: '#FFFFFF'}},
-  {title: 'belafonte', style: {color: '#45373C', backgroundColor: '#D5CCBA'}},
-  {title: 'ocean', style: {color: '#FFFFFF', backgroundColor: '#224FBC'}},
-  {title: 'borland', style: {color: '#FFFF4E', backgroundColor: '#0000A4'}},
-  {title: 'adventure', style: {color: '#F8DCC0', backgroundColor: '#1F1D45'}},
-  {title: 'ubuntu', style: {color: '#EEEEEC', backgroundColor: '#300A24'}},
-  {title: 'black', style: {color: '#FFFFFF', backgroundColor: '#000000'}}
-])
+function toggleFavorite () {
+  fontsStore.toggleFavoriteFont($props.curFont)
+}
 
 function colorSchemeChange (scheme) {
   $emit('colorSchemeChange', scheme)

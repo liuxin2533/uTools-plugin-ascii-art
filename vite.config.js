@@ -18,7 +18,8 @@ export default defineConfig({
     vue(),
     AutoImport({
       imports: [
-        'vue'
+        'vue',
+        'pinia'
       ],
       resolvers: [ArcoResolver()]
     }),

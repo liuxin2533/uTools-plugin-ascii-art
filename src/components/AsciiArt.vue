@@ -4,48 +4,31 @@
       <a-row>
         <a-col flex="auto" style="padding-right: 10px;">
           <a-input
-              ref="strRef"
-              v-model="data.str"
-              allow-clear
-              size="large"
-              placeholder="输入字符试试吧~仅支持 ASCII 字符, 部分字体仅支持纯英文"
-              @input="gen"></a-input>
+            ref="strRef"
+            v-model="data.str"
+            allow-clear
+            size="large"
+            placeholder="输入字符试试吧~仅支持 ASCII 字符, 部分字体仅支持纯英文"
+            @input="gen"></a-input>
         </a-col>
         <a-col flex="230px" style="display: flex;">
           <a-select
-              v-model="data.font"
-              :options="fonts"
-              allow-search
-              allow-clear
-              size="large"
-              @change="gen"></a-select>
-          <a-popover title="字体设置" trigger="click">
-            <a-button type="primary" size="large">
-              <icon-settings></icon-settings>
-            </a-button>
-            <template #content>
-              <a-form :model="settingModel" size="small" auto-label-width style="min-width: 300px;">
-                <a-form-item field="horizontalLayout" label="水平间距" tooltip="设置字符水平间距，通常您不需要调整它">
-                  <a-select v-model="settingModel.horizontalLayout" :options="fontLayout" @change="gen"></a-select>
-                </a-form-item>
-                <a-form-item field="verticalLayout" label="垂直间距"
-                             tooltip="设置字符垂直间距，通常您不需要调整它，大部分字体不支持此选项">
-                  <a-select v-model="settingModel.verticalLayout" :options="fontLayout" @change="gen"></a-select>
-                </a-form-item>
-                <!--                <a-form-item field="width" label="宽度">-->
-                <!--                  <a-select v-model="settingModel.width" :options="fonts"></a-select>-->
-                <!--                </a-form-item>-->
-                <!--                <a-form-item field="horizontalLayout" label="水平布局">-->
-                <!--                  <a-select v-model="settingModel.horizontalLayout" :options="fonts"></a-select>-->
-                <!--                </a-form-item>-->
-              </a-form>
-            </template>
-          </a-popover>
+            v-model="data.font"
+            :options="_fonts"
+            allow-search
+            allow-clear
+            size="large"
+            @change="gen"></a-select>
+          <FontSetting @change="onFontSettingChange" @toggle-favorite-fonts="onToggleFavoriteFonts"></FontSetting>
         </a-col>
       </a-row>
     </a-layout-header>
     <a-layout-content style="margin-top: 20px;position: relative;">
-      <Tools @colorSchemeChange="colorSchemeChange" @fontChange="fontChange" @copy="copy"></Tools>
+      <Tools
+        :cur-font="data.font"
+        @colorSchemeChange="colorSchemeChange"
+        @fontChange="fontChange"
+        @copy="copy"></Tools>
       <pre class="ascii-art-wrapper" :style="colorScheme.style">
           {{ artStr }}
       </pre>
@@ -54,7 +37,7 @@
       <a-space direction="vertical" fill>
         <a-alert type="normal">
           <template #icon>
-            <icon-exclamation-circle-fill/>
+            <icon-exclamation-circle-fill />
           </template>
           字体来源: figlet.js
         </a-alert>
@@ -64,9 +47,13 @@
 </template>
 
 <script setup>
-import {fonts, textSync} from '@/services/figletService'
-import {Message} from '@arco-design/web-vue'
+import { fonts, textSync } from '@/services/figletService'
+import { Message } from '@arco-design/web-vue'
 import Tools from '@/components/Tools.vue'
+import FontSetting from '@/components/FontSetting.vue'
+import { useFontsStore } from '@/store/fonts.js'
+
+const fontsStore = useFontsStore()
 
 const strRef = ref()
 const colorScheme = ref({
@@ -77,20 +64,22 @@ const data = ref({
   font: 'Ghost'
 })
 const artStr = ref('')
-const settingModel = ref({
-  horizontalLayout: 'default',
-  verticalLayout: 'default',
-  width: null,
-  whitespaceBreak: false
+
+const fontSetting = {}
+const onlyFavorite = ref(false)
+
+const _fonts = computed(() => {
+  return onlyFavorite.value ? fonts.filter(x => fontsStore.isFavorite(x.value)) : fonts
 })
 
-const fontLayout = [
-  {label: '默认', value: 'default'}, // 按照字体设计者默认的间距
-  {label: '完整字符间距', value: 'full'}, // 完整字母间距
-  {label: '最小字符间距', value: 'fitted'}, // 最小字母间距
-  {label: 'controlled smushing', value: 'controlled smushing'}, // 通用
-  {label: 'universal smushing', value: 'universal smushing'} // 通用
-]
+function onFontSettingChange (value) {
+  Object.assign(fontSetting, value)
+  gen()
+}
+
+function onToggleFavoriteFonts (value) {
+  onlyFavorite.value = value
+}
 
 function gen () {
   if (!data.value.str || !data.value.font) {
@@ -98,7 +87,7 @@ function gen () {
   }
   artStr.value = textSync(data.value.str, {
     font: data.value.font,
-    ...settingModel.value
+    ...fontSetting
   })
 }
 
@@ -107,17 +96,26 @@ function colorSchemeChange (scheme) {
 }
 
 function fontChange (changeIndex) {
-  let index = fonts.findIndex(x => x.value === data.value.font)
+  const fontList = _fonts.value
+  let index = fontList.findIndex(x => x.value === data.value.font)
   index += changeIndex
 
-  index = Math.min(Math.max(index, 0), fonts.length - 1)
-  data.value.font = fonts[index].value
+  if (index < 0) {
+    index = fontList.length - 1
+  } else if (index >= fontList.length) {
+    index = 0
+  }
+  if (!fontList[index]) {
+    Message.warning({ content: '好像没有别的字体啦!', position: 'top' })
+    return
+  }
+  data.value.font = fontList[index].value
   gen()
 }
 
 function copy () {
   navigator.clipboard.writeText(artStr.value)
-  Message.success({content: '复制成功!', position: 'top'})
+  Message.success({ content: '复制成功!', position: 'top' })
 }
 
 gen()
