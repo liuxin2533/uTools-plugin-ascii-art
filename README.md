@@ -1,8 +1,8 @@
-# uTools plugin: ASCII Art
-
----
+# ASCII Art
 
 ASCII Art可以把一段文本用符号的形式展现出来，就像下面这样：`Hi, friend`
+
+> 它可以运行在浏览器中，同时也可以作为插件运行在uTools中。
 
 ```html
            ('-. .-.                          _  .-')             ('-.       .-') _  _ .-') _   
@@ -15,13 +15,18 @@ ASCII Art可以把一段文本用符号的形式展现出来，就像下面这�
 |  | |  |(_|  |.-.        \|  |_)  |  |\  \(_|  |    |  `---.|  | \   |   |  '--'  / 
 `--' `--'  `--'',/         `--'    `--' '--' `--'    `------'`--'  `--'   `-------'  
 ```
-# 快速开始
+
+## 快速开始
+
 **安装**
-```bash
+
+```sh
 yarn install
 ```
+
 **运行**
-```bash
+
+```sh
 yarn dev
 
 VITE v4.4.6  ready in 495 ms
@@ -30,15 +35,19 @@ VITE v4.4.6  ready in 495 ms
 ➜  press h to show help
 
 ```
+
 **加载字体文件**
-```bash
+
+```sh
 yarn loadfonts
 ```
+
 > 项目使用[figlet.js](https://github.com/patorjk/figlet.js)生成字符画，所有字体均来源于`figlet/importable-fonts/*.js`
 > 
-> 因为运行在浏览器器中，figlet不支持在浏览器中同步加载字体，所以我们用预先加载+转换的方式生成可用的字体数据
+> 因为运行在浏览器中，figlet不支持在浏览器中同步加载字体，所以我们用预先加载+转换的方式生成可用的字体数据
 
 **如何在uTools中运行**
+
 - 启动项目`yarn dev`
 - 打开uTools开发者工具
 - 新建插件项目
@@ -55,6 +64,3 @@ yarn loadfonts
 - [ ] 彩蛋
 - [ ] 支持导入字体
 - [ ] 支持图片转字符画
-
-
-
