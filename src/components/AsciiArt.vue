@@ -29,9 +29,9 @@
         @colorSchemeChange="colorSchemeChange"
         @fontChange="fontChange"
         @copy="copy"></Tools>
-      <pre class="ascii-art-wrapper" :style="colorScheme.style">
-          {{ artStr }}
-      </pre>
+<pre class="ascii-art-wrapper" :style="colorScheme.style">
+{{artStr}}
+</pre>
     </a-layout-content>
     <a-layout-footer>
       <a-space direction="vertical" fill>
@@ -89,6 +89,7 @@ function gen () {
     font: data.value.font,
     ...fontSetting
   })
+  console.log(artStr.value)
 }
 
 function colorSchemeChange (scheme) {
@@ -128,6 +129,7 @@ onMounted(() => {
 
 <style scoped>
 .ascii-art-wrapper {
+  font-family: Menlo,Monaco,Consolas,Andale Mono,lucida console,Courier New,monospace;
   padding: 30px 20px 0 20px;
   min-height: 210px;
   background-color: #edf2f9;
